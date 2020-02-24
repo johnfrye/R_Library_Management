@@ -167,8 +167,6 @@ k <- missing_github$package
 
 # Install from GitHub -----------------------------------------------------
 
-Sys.setenv(GITHUB_PAT = '0fdc664a99c90b4ae1b02ba217afb900f901a94b')
-
 # for (i in 1:length(k)){
 for (i in 1:3){
   invisible(apply(missing_github, 1, function(p) {
