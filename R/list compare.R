@@ -1,7 +1,7 @@
 
 # Environment -------------------------------------------------------------
 
-pacman::p_load(dplyr, tidyr, stringr, fryeutilities)
+pacman::p_load(dplyr, pbapply, tidyr, stringr, fryeutilities)
 
 # pacman::p_load(stats, devtools, purrr, magrittr, httr,
 #                readxl, openxlsx, data.table, reshape2,
@@ -112,7 +112,8 @@ drop_pkgs <- c('adehabitat', 'ade4TkGUI', 'littler', 'metScanR', 'RnavGraph',
                'pcaL1', 'reinstallr', 'gpuR', 'strptimer', 'randomForest.ddR',
                'ddR', 'tkrplot', 'ConvergenceConcepts', 'COveR', 'datacheckr',
                'genderNaRmes', 'FGN', 'mixer', 'R2Cuba', 'rgp', 'ripums', 'RMongo',
-               'rsam', 'rPython', 'genderNames', 'rite', 'backtestGraphics')
+               'rsam', 'rPython', 'genderNames', 'rite', 'backtestGraphics',
+               'Kodama', 'msgtools', 'PythonInR')
 missing2 <- missing0 %>% 
   filter(!package %in% drop_pkgs)
 
@@ -133,8 +134,12 @@ pkgs <- paste(missing_cran$package, sep="")
 
 View(missing_cran)
 
-# for (i in 13:25){
- 
+# for (i in 112:200){
+for (i in 1:length(pkgs)){
+  install.packages(pkgs[i], dependencies = TRUE)
+  print(paste0(i, " of ", length(pkgs)))
+  Sys.sleep(2)
+}
 
 # Try Bioconductor for packages not on CRAN
 
@@ -147,7 +152,11 @@ biocLite(mp)
 
 missing_github <- missing[grep("Github", missing$source), ] %>% 
   filter(!package %in% c("gambin2", "NutrientData", "eAnalytics",
-                         "plotcon", "githubinstall"))
+                         "plotcon", "githubinstall", 'ashr',
+                         'bettertrace', 'colformat', 'd3', 'datacomb',
+                         'datapkg', 'easyRFM', 'edarf', 'evalg', 'GeomComb',
+                         'easyRFM', 'mason.rpkg', 'marketeR', 'staticdocs')) %>% 
+  filter(!package %in% pkgs)
 
 View(missing_github)
 
@@ -158,17 +167,20 @@ k <- missing_github$package
 
 # Install from GitHub -----------------------------------------------------
 
+Sys.setenv(GITHUB_PAT = '0fdc664a99c90b4ae1b02ba217afb900f901a94b')
+
 # for (i in 1:length(k)){
-for (i in 1:20){
+for (i in 1:3){
   invisible(apply(missing_github, 1, function(p) {
     just_repo <- str_match(p["source"],
                            "\\(([[:alnum:]-_\\.]*/[[:alnum:]-_\\.]*)[@[:alnum:]]*")[,2]
     # this will prevent package install errors from stopping the function
-    try(devtools::install_github(just_repo, dependencies=TRUE))
+    try(devtools::install_github(just_repo[i], dependencies=TRUE))
     Sys.sleep(2)
   }))
 }
 
+install_git('ellisp/forecastxgb')
 # Look for CRAN versions of github packages -------------------------------
 
 for (i in 1:length(k)){  
