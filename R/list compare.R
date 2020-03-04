@@ -113,7 +113,10 @@ drop_pkgs <- c('adehabitat', 'ade4TkGUI', 'littler', 'metScanR', 'RnavGraph',
                'ddR', 'tkrplot', 'ConvergenceConcepts', 'COveR', 'datacheckr',
                'genderNaRmes', 'FGN', 'mixer', 'R2Cuba', 'rgp', 'ripums', 'RMongo',
                'rsam', 'rPython', 'genderNames', 'rite', 'backtestGraphics',
-               'Kodama', 'msgtools', 'PythonInR')
+               'Kodama', 'msgtools', 'PythonInR', 'ANLP', 'anonymizer',
+               'ascii', 'AutoModel', 'aws.polly', 'BayesBridge', 'bigalgebra',
+               'bigRR', 'boclust', 'boxoffice', 'CALIBERrfimpute', 'CAM')
+
 missing2 <- missing0 %>% 
   filter(!package %in% drop_pkgs)
 
@@ -134,8 +137,8 @@ pkgs <- paste(missing_cran$package, sep="")
 
 View(missing_cran)
 
-# for (i in 112:200){
-for (i in 1:length(pkgs)){
+for (i in 34:200){
+# for (i in 1:length(pkgs)){
   install.packages(pkgs[i], dependencies = TRUE)
   print(paste0(i, " of ", length(pkgs)))
   Sys.sleep(2)
