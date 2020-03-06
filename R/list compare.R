@@ -115,7 +115,17 @@ drop_pkgs <- c('adehabitat', 'ade4TkGUI', 'littler', 'metScanR', 'RnavGraph',
                'rsam', 'rPython', 'genderNames', 'rite', 'backtestGraphics',
                'Kodama', 'msgtools', 'PythonInR', 'ANLP', 'anonymizer',
                'ascii', 'AutoModel', 'aws.polly', 'BayesBridge', 'bigalgebra',
-               'bigRR', 'boclust', 'boxoffice', 'CALIBERrfimpute', 'CAM')
+               'bigRR', 'boclust', 'boxoffice', 'CALIBERrfimpute', 'CAM',
+               'autopls', 'bikedata', 'camel', 'classify', 'CluMix', 'clustergas', 'comparer', 'correlate', 'covTest',
+               'crandatapkgs', 'DAAG', 'DAAGxtras', 'Daim', 'darch', 'data360r', 'DatABEL', 'datadr', 'DeducerExtras',
+               'dendextendRcpp', 'dicecrawler', 'docker', 'doMC', 'dprep', 'dtables', 'easyformatr', 'easyml', 'edgarWebR',
+               'ElemStatLearn', 'elmNN', 'Emcdf', 'EnQuireR', 'ensembleEN', 'epitable', 'ExtDist', 'extracat', 'ezsummary',
+               'FactoRizationMachines', 'fanovaGraph', 'fArma', 'FastRWeb', 'FCNN4R', 'fheatmap', 'fifer', 'formulize', 'FRB',
+               'frequencies', 'Funclustering', 'funcy', 'GAR', 'gcExplorer', 'GenABEL', 'GenABEL.data', 'genderdata',
+               'genderizeR', 'geo', 'geocodeHERE', 'geomnet', 'ggFacetSample', 'ggsubplot', 'ghit')
+
+
+# (p1 <- paste(pkgs[1:59], sep = "'", collapse = "', '"))
 
 missing2 <- missing0 %>% 
   filter(!package %in% drop_pkgs)
@@ -137,7 +147,7 @@ pkgs <- paste(missing_cran$package, sep="")
 
 View(missing_cran)
 
-for (i in 34:200){
+for (i in 1:100){
 # for (i in 1:length(pkgs)){
   install.packages(pkgs[i], dependencies = TRUE)
   print(paste0(i, " of ", length(pkgs)))
