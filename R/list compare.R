@@ -122,7 +122,8 @@ drop_pkgs <- c('adehabitat', 'ade4TkGUI', 'littler', 'metScanR', 'RnavGraph',
                'ElemStatLearn', 'elmNN', 'Emcdf', 'EnQuireR', 'ensembleEN', 'epitable', 'ExtDist', 'extracat', 'ezsummary',
                'FactoRizationMachines', 'fanovaGraph', 'fArma', 'FastRWeb', 'FCNN4R', 'fheatmap', 'fifer', 'formulize', 'FRB',
                'frequencies', 'Funclustering', 'funcy', 'GAR', 'gcExplorer', 'GenABEL', 'GenABEL.data', 'genderdata',
-               'genderizeR', 'geo', 'geocodeHERE', 'geomnet', 'ggFacetSample', 'ggsubplot', 'ghit')
+               'genderizeR', 'geo', 'geocodeHERE', 'geomnet', 'ggFacetSample', 'ggsubplot', 'ghit',
+               'grpregOverlap', 'hei', 'HIBPwned')
 
 
 # (p1 <- paste(pkgs[1:59], sep = "'", collapse = "', '"))
