@@ -123,7 +123,9 @@ drop_pkgs <- c('adehabitat', 'ade4TkGUI', 'littler', 'metScanR', 'RnavGraph',
                'FactoRizationMachines', 'fanovaGraph', 'fArma', 'FastRWeb', 'FCNN4R', 'fheatmap', 'fifer', 'formulize', 'FRB',
                'frequencies', 'Funclustering', 'funcy', 'GAR', 'gcExplorer', 'GenABEL', 'GenABEL.data', 'genderdata',
                'genderizeR', 'geo', 'geocodeHERE', 'geomnet', 'ggFacetSample', 'ggsubplot', 'ghit',
-               'grpregOverlap', 'hei', 'HIBPwned')
+               'grpregOverlap', 'hei', 'HIBPwned', 'infuser', 'INLAutils', 'ionicons', 'IPSUR', 'IPtoCountry', 'ITEMAN',
+               'its', 'itunesr', 'jug', 'kerasformula', 'Kmisc', 'KoNLP', 'latticeDensity', 'ldstatsHD', 'learningCurve',
+               'letsR', 'lettercase', 'listless', 'lqa', 'LSAmitR', 'lsl', 'lsmeans', 'lspls', 'lucr')
 
 
 # (p1 <- paste(pkgs[1:59], sep = "'", collapse = "', '"))
@@ -145,6 +147,8 @@ if(nrow(missing_cran) > 0 ) missing_cran <- dff(index = 1:nrow(missing_cran), mi
 pkgs <- paste(missing_cran$package, sep="")
 
 # View Missing CRAN -------------------------------------------------------
+
+# paste(missing_cran$package[1:24], collapse = "', '")
 
 View(missing_cran)
 
