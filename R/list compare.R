@@ -129,6 +129,7 @@ drop_pkgs <- c('adehabitat', 'ade4TkGUI', 'littler', 'metScanR', 'RnavGraph',
                'mbgraphic', 'maxent', 'MAR1', 'mixOmics', 'MonetDBLite', 'mRm', 'MTurkR')
 
 
+
 # (p1 <- paste(pkgs[1:59], sep = "'", collapse = "', '"))
 
 missing2 <- missing0 %>% 
