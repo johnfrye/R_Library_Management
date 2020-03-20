@@ -125,7 +125,8 @@ drop_pkgs <- c('adehabitat', 'ade4TkGUI', 'littler', 'metScanR', 'RnavGraph',
                'genderizeR', 'geo', 'geocodeHERE', 'geomnet', 'ggFacetSample', 'ggsubplot', 'ghit',
                'grpregOverlap', 'hei', 'HIBPwned', 'infuser', 'INLAutils', 'ionicons', 'IPSUR', 'IPtoCountry', 'ITEMAN',
                'its', 'itunesr', 'jug', 'kerasformula', 'Kmisc', 'KoNLP', 'latticeDensity', 'ldstatsHD', 'learningCurve',
-               'letsR', 'lettercase', 'listless', 'lqa', 'LSAmitR', 'lsl', 'lsmeans', 'lspls', 'lucr')
+               'letsR', 'lettercase', 'listless', 'lqa', 'LSAmitR', 'lsl', 'lsmeans', 'lspls', 'lucr', 'MeanShift',
+               'mbgraphic', 'maxent', 'MAR1', 'mixOmics', 'MonetDBLite', 'mRm', 'MTurkR')
 
 
 # (p1 <- paste(pkgs[1:59], sep = "'", collapse = "', '"))
