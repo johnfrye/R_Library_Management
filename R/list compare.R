@@ -126,7 +126,8 @@ drop_pkgs <- c('adehabitat', 'ade4TkGUI', 'littler', 'metScanR', 'RnavGraph',
                'grpregOverlap', 'hei', 'HIBPwned', 'infuser', 'INLAutils', 'ionicons', 'IPSUR', 'IPtoCountry', 'ITEMAN',
                'its', 'itunesr', 'jug', 'kerasformula', 'Kmisc', 'KoNLP', 'latticeDensity', 'ldstatsHD', 'learningCurve',
                'letsR', 'lettercase', 'listless', 'lqa', 'LSAmitR', 'lsl', 'lsmeans', 'lspls', 'lucr', 'MeanShift',
-               'mbgraphic', 'maxent', 'MAR1', 'mixOmics', 'MonetDBLite', 'mRm', 'MTurkR')
+               'mbgraphic', 'maxent', 'MAR1', 'mixOmics', 'MonetDBLite', 'mRm', 'MTurkR', 'mvtboost', 'playwith', 'pmg',
+               'ncdf', 'neurovault', 'NNLM', 'oc', 'odfWeave', 'onlineCPD')
 
 
 
@@ -154,7 +155,7 @@ pkgs <- paste(missing_cran$package, sep="")
 
 View(missing_cran)
 
-for (i in 1:100){
+for (i in 1:50){
 # for (i in 1:length(pkgs)){
   install.packages(pkgs[i], dependencies = TRUE)
   print(paste0(i, " of ", length(pkgs)))
