@@ -1,7 +1,7 @@
 
 # Environment -------------------------------------------------------------
 
-pacman::p_load(dplyr, pbapply, tidyr, stringr, fryeutilities)
+pacman::p_load(dplyr, pbapply, tidyr, stringr, fryeR)
 
 # pacman::p_load(stats, devtools, purrr, magrittr, httr,
 #                readxl, openxlsx, data.table, reshape2,
@@ -127,7 +127,8 @@ drop_pkgs <- c('adehabitat', 'ade4TkGUI', 'littler', 'metScanR', 'RnavGraph',
                'its', 'itunesr', 'jug', 'kerasformula', 'Kmisc', 'KoNLP', 'latticeDensity', 'ldstatsHD', 'learningCurve',
                'letsR', 'lettercase', 'listless', 'lqa', 'LSAmitR', 'lsl', 'lsmeans', 'lspls', 'lucr', 'MeanShift',
                'mbgraphic', 'maxent', 'MAR1', 'mixOmics', 'MonetDBLite', 'mRm', 'MTurkR', 'mvtboost', 'playwith', 'pmg',
-               'ncdf', 'neurovault', 'NNLM', 'oc', 'odfWeave', 'onlineCPD')
+               'ncdf', 'neurovault', 'NNLM', 'oc', 'odfWeave', 'onlineCPD', 'AntMAN', 'aslib', 'BradleyTerryScalable',
+               'bagRboostR', 'BrailleR', 'arulesNBMiner')
 
 
 
@@ -155,10 +156,12 @@ pkgs <- paste(missing_cran$package, sep="")
 
 View(missing_cran)
 
-for (i in 1:50){
+maxlen <- 100
+  
+for (i in 1:maxlen){
 # for (i in 1:length(pkgs)){
   install.packages(pkgs[i], dependencies = TRUE)
-  print(paste0(i, " of ", length(pkgs)))
+  print(paste0(i, " of ", maxlen))
   Sys.sleep(2)
 }
 
