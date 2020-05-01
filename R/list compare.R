@@ -156,9 +156,9 @@ pkgs <- paste(missing_cran$package, sep="")
 
 View(missing_cran)
 
-maxlen <- 100
+maxlen <- 50
   
-for (i in 1:maxlen){
+for (i in 7:maxlen){
 # for (i in 1:length(pkgs)){
   install.packages(pkgs[i], dependencies = TRUE)
   print(paste0(i, " of ", maxlen))
