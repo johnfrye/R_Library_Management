@@ -128,7 +128,7 @@ drop_pkgs <- c('adehabitat', 'ade4TkGUI', 'littler', 'metScanR', 'RnavGraph',
                'letsR', 'lettercase', 'listless', 'lqa', 'LSAmitR', 'lsl', 'lsmeans', 'lspls', 'lucr', 'MeanShift',
                'mbgraphic', 'maxent', 'MAR1', 'mixOmics', 'MonetDBLite', 'mRm', 'MTurkR', 'mvtboost', 'playwith', 'pmg',
                'ncdf', 'neurovault', 'NNLM', 'oc', 'odfWeave', 'onlineCPD', 'AntMAN', 'aslib', 'BradleyTerryScalable',
-               'bagRboostR', 'BrailleR', 'arulesNBMiner')
+               'bagRboostR', 'BrailleR', 'OutbreakTools', 'pkgcopier', 'Prototest', 'Radiant')
 
 
 
@@ -156,16 +156,16 @@ pkgs <- paste(missing_cran$package, sep="")
 
 View(missing_cran)
 
-maxlen <- 50
-  
-for (i in 7:maxlen){
-# for (i in 1:length(pkgs)){
+(maxlen <- c(50, length(pkgs))[1])
+
+for (i in 23:maxlen){
+# for (i in 11:length(pkgs)){
   install.packages(pkgs[i], dependencies = TRUE)
   print(paste0(i, " of ", maxlen))
   Sys.sleep(2)
 }
 
-# Try Bioconductor for packages not on CRAN
+# Try Bioconductor for packages not on CRAN -------------------------------
 
 mp <- missing_cran %>% 
   pull(package)
