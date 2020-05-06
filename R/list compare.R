@@ -106,31 +106,10 @@ missing0 <- df_all %>%
 # using grep here rather than 'which' because some package names change
 # with the version (rare github cases, ideally the devs change this practice)
 
-drop_pkgs <- c('adehabitat', 'ade4TkGUI', 'littler', 'metScanR', 'RnavGraph', 
-               'narnia', 'fstrings', 'Gmisc', 'RDocumentation', 'taskscheduleR', 
-               'stmgui', 'SimpleTable', 'betareg', 'rggobi', 'clusterfly', 
-               'pcaL1', 'reinstallr', 'gpuR', 'strptimer', 'randomForest.ddR',
-               'ddR', 'tkrplot', 'ConvergenceConcepts', 'COveR', 'datacheckr',
-               'genderNaRmes', 'FGN', 'mixer', 'R2Cuba', 'rgp', 'ripums', 'RMongo',
-               'rsam', 'rPython', 'genderNames', 'rite', 'backtestGraphics',
-               'Kodama', 'msgtools', 'PythonInR', 'ANLP', 'anonymizer',
-               'ascii', 'AutoModel', 'aws.polly', 'BayesBridge', 'bigalgebra',
-               'bigRR', 'boclust', 'boxoffice', 'CALIBERrfimpute', 'CAM',
-               'autopls', 'bikedata', 'camel', 'classify', 'CluMix', 'clustergas', 'comparer', 'correlate', 'covTest',
-               'crandatapkgs', 'DAAG', 'DAAGxtras', 'Daim', 'darch', 'data360r', 'DatABEL', 'datadr', 'DeducerExtras',
-               'dendextendRcpp', 'dicecrawler', 'docker', 'doMC', 'dprep', 'dtables', 'easyformatr', 'easyml', 'edgarWebR',
-               'ElemStatLearn', 'elmNN', 'Emcdf', 'EnQuireR', 'ensembleEN', 'epitable', 'ExtDist', 'extracat', 'ezsummary',
-               'FactoRizationMachines', 'fanovaGraph', 'fArma', 'FastRWeb', 'FCNN4R', 'fheatmap', 'fifer', 'formulize', 'FRB',
-               'frequencies', 'Funclustering', 'funcy', 'GAR', 'gcExplorer', 'GenABEL', 'GenABEL.data', 'genderdata',
-               'genderizeR', 'geo', 'geocodeHERE', 'geomnet', 'ggFacetSample', 'ggsubplot', 'ghit',
-               'grpregOverlap', 'hei', 'HIBPwned', 'infuser', 'INLAutils', 'ionicons', 'IPSUR', 'IPtoCountry', 'ITEMAN',
-               'its', 'itunesr', 'jug', 'kerasformula', 'Kmisc', 'KoNLP', 'latticeDensity', 'ldstatsHD', 'learningCurve',
-               'letsR', 'lettercase', 'listless', 'lqa', 'LSAmitR', 'lsl', 'lsmeans', 'lspls', 'lucr', 'MeanShift',
-               'mbgraphic', 'maxent', 'MAR1', 'mixOmics', 'MonetDBLite', 'mRm', 'MTurkR', 'mvtboost', 'playwith', 'pmg',
-               'ncdf', 'neurovault', 'NNLM', 'oc', 'odfWeave', 'onlineCPD', 'AntMAN', 'aslib', 'BradleyTerryScalable',
-               'bagRboostR', 'BrailleR', 'OutbreakTools', 'pkgcopier', 'Prototest', 'Radiant')
+load(fp(dd, 'drop_pkgs.RData'))
 
-
+# drop_pkgs <- c(drop_pkgs, 'Shrinkage')
+# save(drop_pkgs, file = fp(dd, 'drop_pkgs.RData'))
 
 # (p1 <- paste(pkgs[1:59], sep = "'", collapse = "', '"))
 
@@ -158,7 +137,7 @@ View(missing_cran)
 
 (maxlen <- c(100, length(pkgs))[1])
 
-for (i in 35:maxlen){
+for (i in 1:maxlen){
 # for (i in 11:length(pkgs)){
   install.packages(pkgs[i], dependencies = TRUE)
   print(paste0(i, " of ", maxlen))
