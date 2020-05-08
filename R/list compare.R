@@ -108,7 +108,7 @@ missing0 <- df_all %>%
 
 load(fp(dd, 'drop_pkgs.RData'))
 
-# drop_pkgs <- c(drop_pkgs, 'Shrinkage')
+# drop_pkgs <- c(drop_pkgs, 'tsbugs')
 # save(drop_pkgs, file = fp(dd, 'drop_pkgs.RData'))
 
 # (p1 <- paste(pkgs[1:59], sep = "'", collapse = "', '"))
@@ -135,10 +135,10 @@ pkgs <- paste(missing_cran$package, sep="")
 
 View(missing_cran)
 
-(maxlen <- c(100, length(pkgs))[1])
+(maxlen <- c(100, length(pkgs))[2])
 
-for (i in 1:maxlen){
-# for (i in 11:length(pkgs)){
+# for (i in 1:maxlen){
+for (i in 6:length(pkgs)){
   install.packages(pkgs[i], dependencies = TRUE)
   print(paste0(i, " of ", maxlen))
   Sys.sleep(2)
